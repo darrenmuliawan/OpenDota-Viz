@@ -174,7 +174,7 @@ export const HeroesPage: React.FC<Props> = (props) => {
             .attr('y', height - 50)
             .attr('text-anchor', 'middle')
             .style('fill', '#FFFFFF')
-            .attr('class', 'small-text')
+            .attr('class', 'small-text bold')
             .text(annotation.message);
 
             // HIGHLIGHT HERO

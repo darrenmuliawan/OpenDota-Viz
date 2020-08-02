@@ -248,7 +248,7 @@ export const RecentMatchesPage: React.FC<Props> = (props) => {
             .attr('y', 50)
             .attr("text-anchor", "middle")
             .style('fill', '#FFFFFF')
-            .attr('class', 'small-text')
+            .attr('class', 'small-text bold')
             .text(annotation.message)
             
             // ADDING ANNOTATION PATH TO BAR

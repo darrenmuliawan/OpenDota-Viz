@@ -185,7 +185,7 @@ export const PeersPage: React.FC<Props> = (props) => {
             .attr('y', 50)
             .attr('text-anchor', 'middle')
             .style('fill', '#FFFFFF')
-            .attr('class', 'small-text')
+            .attr('class', 'small-text bold')
             .text(annotation.message);
 
             // HIGHLIGHT PEER
