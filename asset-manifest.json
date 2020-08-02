@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/OpenDota-Viz/static/css/main.e2534216.chunk.css",
-    "main.js": "/OpenDota-Viz/static/js/main.f4de1866.chunk.js",
-    "main.js.map": "/OpenDota-Viz/static/js/main.f4de1866.chunk.js.map",
+    "main.js": "/OpenDota-Viz/static/js/main.3144ca27.chunk.js",
+    "main.js.map": "/OpenDota-Viz/static/js/main.3144ca27.chunk.js.map",
     "runtime-main.js": "/OpenDota-Viz/static/js/runtime-main.8e722b8d.js",
     "runtime-main.js.map": "/OpenDota-Viz/static/js/runtime-main.8e722b8d.js.map",
     "static/js/2.3012b3ed.chunk.js": "/OpenDota-Viz/static/js/2.3012b3ed.chunk.js",
     "static/js/2.3012b3ed.chunk.js.map": "/OpenDota-Viz/static/js/2.3012b3ed.chunk.js.map",
     "index.html": "/OpenDota-Viz/index.html",
-    "precache-manifest.5a86bff5b6a449c3f0e2e46d0d22dac9.js": "/OpenDota-Viz/precache-manifest.5a86bff5b6a449c3f0e2e46d0d22dac9.js",
+    "precache-manifest.5a428e67e339100683788adf81378329.js": "/OpenDota-Viz/precache-manifest.5a428e67e339100683788adf81378329.js",
     "service-worker.js": "/OpenDota-Viz/service-worker.js",
     "static/css/main.e2534216.chunk.css.map": "/OpenDota-Viz/static/css/main.e2534216.chunk.css.map",
     "static/js/2.3012b3ed.chunk.js.LICENSE.txt": "/OpenDota-Viz/static/js/2.3012b3ed.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8e722b8d.js",
     "static/js/2.3012b3ed.chunk.js",
     "static/css/main.e2534216.chunk.css",
-    "static/js/main.f4de1866.chunk.js"
+    "static/js/main.3144ca27.chunk.js"
   ]
 }
