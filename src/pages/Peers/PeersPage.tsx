@@ -262,7 +262,7 @@ export const PeersPage: React.FC<Props> = (props) => {
         <div className="body">
             <div className="header">
                 <div className="header__list">
-                    <p className="large-text white-text" onClick={() => history.push('/recent')}>Recent Matches</p>
+                    <p className="large-text white-text" onClick={() => history.push('/')}>Recent Matches</p>
                 </div>
                 <div className="header__list">
                     <p className="large-text white-text" onClick={() => history.push('/heroes')}>Heroes</p>

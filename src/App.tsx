@@ -8,16 +8,16 @@ import { RecentMatchesPage } from './pages/RecentMatches/RecentMatchesPage';
 import { HeroesPage } from 'pages/Heroes/HeroesPage';
 import { PeersPage } from 'pages/Peers/PeersPage';
 
-let hist = createBrowserHistory({ basename: '/' });
+let hist = createBrowserHistory({ basename: process.env.PUBLIC_URL });
 Axios.defaults.baseURL = "https://api.opendota.com/api/";
 
 function App() {
   return (
     <Router history={hist}>
       <Switch>
-        <Route path={process.env.PUBLIC_URL + "/"} component={RecentMatchesPage}/>
-        <Route path={process.env.PUBLIC_URL + "/heroes"} component={HeroesPage}/>
-        <Route path={process.env.PUBLIC_URL + "/peers"} component={PeersPage}/>
+        <Route exact path="/" component={RecentMatchesPage}/>
+        <Route exact path="/heroes" component={HeroesPage}/>
+        <Route exact path="/peers" component={PeersPage}/>
       </Switch>
     </Router>
   );
