@@ -99,7 +99,7 @@ export const HeroesPage: React.FC<Props> = (props) => {
             .attr('y', (d) => y(d.win))
             .style('fill', '#FFFFFF')
             .attr('class', 'medium-text node')
-            .attr('text-anchor', 'middle')
+            .attr('text-anchor', 'end')
             .attr('id', (d,i) => `heroes-${d.hero_id}`)
             .text((d) => heroes_list.find((e) => e.id === parseInt(d.hero_id)).localized_name)
             .on('click', (d,i) => {
@@ -195,8 +195,8 @@ export const HeroesPage: React.FC<Props> = (props) => {
             // ADDING ANNOTATION PATH TO TEXT
             svg.append('line')
             .style('stroke', '#FFFFFF')
-            .attr('x1', x(annotation.x))
-            .attr('x2', x(annotation.x))
+            .attr('x1', x(annotation.x) - 20)
+            .attr('x2', x(annotation.x) - 20)
             .attr('y1', height - 80)
             .attr('y2', y(annotation.y) + 20)
 
@@ -260,6 +260,7 @@ export const HeroesPage: React.FC<Props> = (props) => {
             <div className="content">
                 <div className="content__left">
                     <p className="large-text white-text">Your heroes # of games vs. # of wins</p>
+                    <p className="large-text lightgrey-text">People tends to perform better in games using their favorite hero. As we can see in the chart, the win rate of the heroes that I played more tends to be higher than the win rate of the heroes that I played less. People will also tend to perform better <span className="bold white-text">against</span> heroes that they played more as they knew better about the hero's weakness and strength.</p>
                     <div className="slider">
                         <div className="slider__label">
                             <p className="small-text white-text">0</p>

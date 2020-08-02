@@ -98,6 +98,11 @@ table {
         margin-right: 40px;
         display: flex;
         flex-direction: column;
+        max-width: 1200px;
+
+        .large-text {
+            margin-bottom: 5px;
+        }
     }
 
     #content__details {

@@ -115,6 +115,7 @@ export const PeersPage: React.FC<Props> = (props) => {
             .attr('y', (d) => y(d.with_win))
             .attr('fill', '#FFFFFF')
             .attr('class', 'small-text node')
+            .attr('text-anchor', 'end')
             .attr('id', (d,i) => `peers-name-${d.account_id}`)
             .text((d) => d.personaname)
             .on('click', (d,i) => {
@@ -210,8 +211,8 @@ export const PeersPage: React.FC<Props> = (props) => {
             // ADDING ANNOTATION PATH TO TEXT
             svg.append('line')
             .style('stroke', '#FFFFFF')
-            .attr('x1', x(annotation.x))
-            .attr('x2', x(annotation.x))
+            .attr('x1', x(annotation.x) - 35)
+            .attr('x2', x(annotation.x) - 35)
             .attr('y1', 70)
             .attr('y2', y(annotation.y) - 20)
 
@@ -274,6 +275,7 @@ export const PeersPage: React.FC<Props> = (props) => {
             <div className="content">
                 <div className="content__left">
                     <p className="large-text white-text">Number of games vs. number of wins with your peers</p>
+                    <p className="large-text lightgrey-text">Players tend to perform better in games when they play with other player that they played a lot of game with, since playing more game together usually means better teamwork and coordination. On the other hand, playing less game together usually means less teamwork and coordination.</p>
                     <div className="slider">
                         <div className="slider__label">
                             <p className="small-text white-text">1</p>

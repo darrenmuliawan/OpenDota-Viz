@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import * as d3 from 'd3';
 import moment from 'moment';
@@ -41,6 +41,13 @@ interface Props {
 
 export const RecentMatchesPage: React.FC<Props> = (props) => {
     const history = useHistory();
+    const [average, setAverage] = useState({
+        gpm: 0,
+        xpm: 0,
+        kill: 0,
+        death: 0,
+        assist: 0
+    })
 
     const secToDuration = (duration: number) => {
         let hour = Math.floor(duration / 3600);
@@ -75,7 +82,7 @@ export const RecentMatchesPage: React.FC<Props> = (props) => {
                 bottom: 100,
                 left: 100
             }
-            let width = 1400 - margin.left - margin.right;
+            let width = 1200 - margin.left - margin.right;
             let height = 700 - margin.top - margin.bottom;
             let svg = 
             d3.select('#chart')
@@ -85,6 +92,26 @@ export const RecentMatchesPage: React.FC<Props> = (props) => {
             .attr('transform', `translate(${margin.left}, ${margin.top})`)
     
             let data: RecentMatch[] = res.data;
+            let totalGPM = 0;
+            let totalXPM = 0;
+            let kill = 0;
+            let death = 0;
+            let assist = 0;
+
+            for (let i = 0; i < data.length; i++) {
+                totalGPM += data[i].gold_per_min;
+                totalXPM += data[i].xp_per_min;
+                kill += data[i].kills;
+                death += data[i].deaths;
+                assist += data[i].assists;
+            }
+            setAverage({
+                gpm: totalGPM / data.length,
+                xpm: totalXPM / data.length,
+                kill: kill / data.length,
+                death: death / data.length,
+                assist: assist / data.length
+            })
 
             // ADD X AXIS
             let xDomain = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'];
@@ -335,7 +362,8 @@ export const RecentMatchesPage: React.FC<Props> = (props) => {
             </div>
             <div className="content">
                 <div className="content__left">
-                    <p className="large-text white-text">20 most recent matches statistics</p>
+                    <p className="large-text white-text">Recent matches statistics</p>
+                    <p className="large-text lightgrey-text">On your 20 recent matches, your average <span className="white-text bold">GPM (Gold per minute)</span> is <span className="white-text bold">{average.gpm.toFixed(0)}</span>, <span className="white-text bold">XPM (Experience per minute)</span> is <span className="white-text bold">{average.xpm.toFixed(0)}</span>, <span className="white-text bold">Kill</span> is <span className="white-text bold">{average.kill.toFixed(0)}</span>, <span className="white-text bold">Death</span> is <span className="white-text bold">{average.death.toFixed(0)}</span>, and <span className="white-text bold">Assist</span> is <span className="white-text bold">{average.assist.toFixed(0)}</span>.</p>
                     <svg id="chart"/>
                 </div>
                 <div id="content__details">
