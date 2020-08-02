@@ -1,0 +1,210 @@
+// Color
+$color-black: #000000;
+$color-darkgrey: #505050;
+$color-grey: #808080;
+$color-lightgrey: #C0C0C0;
+$color-lighter-grey: #E0E0E0;
+$color-white: #FFFFFF;
+$color-carolina: #57A0D3;
+$color-steel: #4682B4;
+$color-airforce: #588BAE;
+$color-yale: #0E4D92;
+$color-link: #0000EE;
+$color-primary-dark-green: #128C7E;
+$color-primary-light-blue: #34B7F1;
+$color-red: #FF1726;
+$color-orange: #FF9933;
+$color-sidebar-selected: #3D5BCB;
+$color-sidebar: #3D5BCB;
+$color-success: #64af6d;
+$color-danger: #f44336;
+$color-warning: #FF8000;//#E19F35;
+$color-edit: #075E54;
+//$color-white: #F2F1F3;
+$color-background: #d8dae4;
+$color-button-default: #b9b9b9;
+$color-button-hover: #1D40CE;
+
+// Color Palette
+$color-light-shades: #F2F1F3;
+$color-light-accent: #73B5D8;
+$color-main-brand: #3D5BCB;
+$color-main-brand-background: #d7dae5;
+$color-main-brand-light: #5271e0;
+$color-dark-accent: #6676AF;
+$color-dark-shades: #171E43;
+
+// Screen Sizes
+$bp-mobile-horizontal-height: 500px;
+$bp-mobile-vertical-height: 900px;
+$bp-tablet-height: 700px;
+$bp-desktop: 1024px;
+
+// Constants
+$width-side-navbar: 200px;
+
+
+@mixin for-size($size) {
+    @if $size == mobile-horizontal {
+        @media only screen and (max-height: $bp-mobile-horizontal-height) { @content; }
+    } @else if $size == small-mobile-vertical {
+        @media only screen and (max-height: 600px) and (max-width: 350px) { @content; }
+    } @else if $size == mobile-vertical-up {
+        @media only screen and (min-height: 1 + $bp-mobile-horizontal-height) and (max-width: $bp-mobile-vertical-height) { @content; }
+    } @else if $size == tablet-up {
+        @media only screen and (min-height: 1 + $bp-tablet-height) and (max-width: $bp-desktop) and (min-width: $bp-tablet-height) { @content; }
+    } @else if $size == ipad-pro-horizontal {
+        @media only screen and (min-height: 1024px) and (min-width: 1366px) and (max-height: 1024px) and (max-width: 1366px) { @content; }
+    } @else if $size == ipad-pro-vertical {
+        @media only screen and (min-width: 1024px) and (min-height: 1366px) and (max-width: 1024px) and (max-height: 1366px) { @content; }
+    } @else if $size == desktop-up {
+        @media only screen and (min-width: $bp-desktop) { @content; }
+    } @else if $size == desktop-15-up {
+        @media only screen and (min-width: 1440px) and (min-height: 900px) { @content; }
+    } @else if $size == desktop-17-up {
+        @media only screen and (min-width: 1920px) and (min-height: 1080px) { @content; }
+    } @else if $size == sm {
+        @media only screen and (min-width: 600px) { @content; }
+    } @else if $size == md {
+        @media only screen and (min-width: 960px) { @content; }
+    } @else if $size == lg {
+        @media only screen and (min-width: 1280px) { @content; }
+    } @else if $size == xl {
+        @media only screen and (min-width: 1920px) { @content; }
+    }
+}
+
+
+// Fonts
+.small-text {
+    font-size: 10px;
+    @include for-size(desktop-up) {
+        font-size: 12px;
+    }
+    @include for-size(desktop-15-up) {
+        font-size: 15px;
+    }
+}
+
+.medium-text {
+    font-size: 13px;
+    @include for-size(desktop-up) {
+        font-size: 15px;
+    }
+    @include for-size(desktop-15-up) {
+        font-size: 18px;
+    }
+}
+
+.large-text {
+    font-size: 16px;
+    @include for-size(desktop-up) {
+        font-size: 18px;
+    }
+    @include for-size(desktop-15-up) {
+        font-size: 21px;
+    }
+}
+
+.xlarge-text {
+    font-size: 20px;
+    @include for-size(desktop-up) {
+        font-size: 22px;
+    }
+    @include for-size(desktop-15-up) {
+        font-size: 25px;
+    }
+}
+
+.xxlarge-text {
+    font-size: 22px;
+    @include for-size(desktop-up) {
+        font-size: 25px;
+    }
+    @include for-size(desktop-15-up) {
+        font-size: 30px;
+    }
+}
+
+.xxxlarge-text {
+    font-size: 50px;
+    @include for-size(desktop-up) {
+        font-size: 55px;
+    }
+    @include for-size(desktop-15-up) {
+        font-size: 60px;
+    }
+}
+
+.black-text {
+    color: $color-black
+}
+
+.darkgrey-text {
+    color: $color-darkgrey
+}
+
+.grey-text {
+    color: $color-grey
+}
+
+.lightgrey-text {
+    color: $color-lightgrey;
+}
+
+.white-text {
+    color: $color-white
+}
+
+.capital-text {
+    text-transform: capitalize;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.danger-text {
+    color: $color-danger;
+}
+
+.warning-text {
+    color: $color-warning;
+}
+
+.success-text {
+    color: $color-success;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.bolder {
+    font-weight: bold;
+}
+
+.brand-text {
+    color: $color-main-brand;
+}
+
+.link-text {
+    color: $color-main-brand;
+    cursor: pointer;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}
+
+.back-icon {
+    margin-right: 10px;
+}
+
+.icon-text {
+    margin-right: 10px;
+}
+
+.paragraph-text {
+    margin: 10px 0;
+}

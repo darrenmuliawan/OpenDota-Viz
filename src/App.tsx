@@ -1,25 +1,25 @@
 import React from 'react';
+import './App.scss';
 import logo from './logo.svg';
-import './App.css';
+import { createBrowserHistory } from 'history';
+import Axios from 'axios';
+import { Router, Switch, Route } from 'react-router';
+import { RecentMatchesPage } from './pages/RecentMatches/RecentMatchesPage';
+import { HeroesPage } from 'pages/Heroes/HeroesPage';
+import { PeersPage } from 'pages/Peers/PeersPage';
+
+let hist = createBrowserHistory({ basename: '/' });
+Axios.defaults.baseURL = "https://api.opendota.com/api/";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={hist}>
+      <Switch>
+        <Route path="/recent" component={RecentMatchesPage}/>
+        <Route path="/heroes" component={HeroesPage}/>
+        <Route path="/peers" component={PeersPage}/>
+      </Switch>
+    </Router>
   );
 }
 
