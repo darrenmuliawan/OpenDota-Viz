@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb9bb1c3ec1876cd61da5cc236496722",
+    "revision": "53ee63e2e34b3d9f0d7a4f539ed4ba4c",
     "url": "/OpenDota-Viz/index.html"
   },
   {
-    "revision": "823c3f657a8fcb58ab78",
+    "revision": "c26aaca66874b52d0b21",
     "url": "/OpenDota-Viz/static/css/main.18f2513a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OpenDota-Viz/static/js/2.45612d49.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "823c3f657a8fcb58ab78",
-    "url": "/OpenDota-Viz/static/js/main.3a49f8d9.chunk.js"
+    "revision": "c26aaca66874b52d0b21",
+    "url": "/OpenDota-Viz/static/js/main.2ccd3efd.chunk.js"
   },
   {
     "revision": "bad85b560b013a3ff4b2",
