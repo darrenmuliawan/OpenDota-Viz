@@ -15,9 +15,9 @@ function App() {
   return (
     <Router history={hist}>
       <Switch>
-        <Route path="/recent" component={RecentMatchesPage}/>
-        <Route path="/heroes" component={HeroesPage}/>
-        <Route path="/peers" component={PeersPage}/>
+        <Route path={process.env.PUBLIC_URL + "/"} component={RecentMatchesPage}/>
+        <Route path={process.env.PUBLIC_URL + "/heroes"} component={HeroesPage}/>
+        <Route path={process.env.PUBLIC_URL + "/peers"} component={PeersPage}/>
       </Switch>
     </Router>
   );
